@@ -1,11 +1,18 @@
 {% extends "page.html" %}
-
+{% block styles %}
+    
+    <link rel="stylesheet" href="/css/style_extra.css" />
+    {{ super() }}
+{% endblock %}
 {% block subtitle %}{{ _("Welcome") }}{% endblock %}
 
 {% block maintag %}{% endblock %}
 
 {% block content %}
   <div role="main" class="hero">
+    <div class="bulb_container">
+<div class="fci-ampolleta-light"><iframe src="http://ciudadanointeligente.org/assets/bulb_light.html?wmode=transparent" width="120" height="220" frameborder="0"></iframe></div>
+</div>
     <div id="content" class="container">
       {{ self.flash() }}
       {{ self.primary_content() }}
