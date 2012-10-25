@@ -58,9 +58,9 @@
         {% block home_search %}
           <div class="module module-shallow module-narrow module-dark info">
             <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
-              <h3 class="heading">{{ _("Search Your Data") }}</h3>
+              <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
               <span class="control-group search-giant">
-                <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('eg. Gold Prices') }}" />
+                <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
                 <button type="submit" value="{{ _('Search') }}">Submit</button>
               </span>
             </form>
@@ -69,7 +69,7 @@
 
         {% block home_tags %}
           <div class="tags">
-            <h3 class="tag">Popular {{ c.facet_titles.name }}</h3>
+            <h3 class="tag">Populares {{ c.facet_titles.name }}</h3>
             {% set tags = h.get_facet_items_dict('tags', limit=3) %}
             {% snippet 'snippets/tag_list.html', tags=tags %}
           </div>
