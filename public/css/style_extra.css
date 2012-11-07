@@ -4,3 +4,21 @@ top: 5px;
 z-index: 10;
 right: 0px;
 }
+
+/* HOME */
+
+.hero .module-popup {
+	margin-top: 0px;
+}
+
+.hero-primary {
+	margin-bottom: 10px;
+}
+
+.hero-primary, .hero-secondary {
+	width: 100%;
+}
+
+.hero-secondary {
+	position: relative;
+}
