@@ -1,22 +1,47 @@
 /* GENERAL */
 
 .fci-ampolleta-light {
-position: absolute;
-top: 5px;
-z-index: 10;
-right: 0px;
+	position: absolute;
+	top: 66px;
+	z-index: 10;
+	right: 5px;
 }
 
-.masthead, .site-footer {
+.masthead, .site-footer, body {
 	background: url(../base/images/textura-header.jpg);
 }
 
-.hero {
+[role="main"].hero {
 	background: url(../base/images/textura-fondohome.jpg);
+	padding-bottom: 20px;
 }
 
-.main {
+[role="main"], .main {
 	background: url(../base/images/textura-fondo.jpg);
+}
+
+.btn-primary {
+background: #a1d1e0;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ExZDFlMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4YmMwY2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #a1d1e0 0%, #8bc0cc 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1d1e0), color-stop(100%,#8bc0cc));
+background: -webkit-linear-gradient(top,  #a1d1e0 0%,#8bc0cc 100%);
+background: -o-linear-gradient(top,  #a1d1e0 0%,#8bc0cc 100%);
+background: -ms-linear-gradient(top,  #a1d1e0 0%,#8bc0cc 100%);
+background: linear-gradient(to bottom,  #a1d1e0 0%,#8bc0cc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1d1e0', endColorstr='#8bc0cc',GradientType=0 );
+}
+
+.dropdown-menu a {
+color: #999;
+}
+
+.dropdown-menu li:nth-child(2n+2) {  
+  background-color: #f2f2f2;
+}
+
+.dropdown-menu li a:hover {
+	background-color: #A4D8DE;
 }
 
 /* HOME */
@@ -25,19 +50,21 @@ right: 0px;
 	margin-top: 0px;
 }
 
-.hero-primary, .hero-secondary {
-	width: 100%;
-	margin-left: 0px;
-	background: url(../base/images/textura-panel.png);
-	border: none;
+.hero > .container {
 	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.3);
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
+.hero-primary, .hero-secondary {
+	width: 100%;
+	margin-left: 0px;
+	background: url(../base/images/textura-panel.png);
+	border: none;
+}
+
 .hero-secondary {
 	position: relative;
-	margin-bottom: 20px;
 	-webkit-border-radius: 0 0 6px 6px;
 	-moz-border-radius: 0 0 6px 6px;
 	border-radius: 0 0 6px 6px;
@@ -53,6 +80,22 @@ right: 0px;
 	width: 50%;
 }
 
+.hero .module-dark {
+	background: transparent;
+	box-shadow: none;
+}
+
+.hero .module-dark .module-content {
+	background-color: #68A0AD;
+}
+
+.search-giant input {
+	font-size: 14px;
+	padding: 9px 40px;
+	width: 95%;
+	margin-left: 20px;
+}
+
 .hero-primary.module.module-popup {
 	background-color: transparent;
 }
@@ -66,4 +109,21 @@ right: 0px;
 .featured.media-overlay {
 	float: left;
 	margin: 30px;
+}
+
+.search-giant:before {
+	content: url(../base/images/engranaje-buscador.png);
+	position: absolute;
+	top: -30px;
+	left: -10px;
+}
+
+/* ADD DATASET */
+
+.stages li.active .highlight {
+	background: #A4D8DE;
+}
+
+.stages li.active::before {
+	color: #A4D8DE;
 }
