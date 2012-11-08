@@ -27,9 +27,20 @@
 
 {% block primary_content %}
   <div class="hero-primary module module-popup">
-    <div class="module-content">
+    <div class="module-content panel">
       {% block home_primary %}
         <header>
+          {% block home_search %}
+          <div class="module module-shallow module-narrow module-dark info">
+            <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
+              <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
+              <span class="control-group search-giant">
+                <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
+                <button type="submit" value="{{ _('Search') }}">Submit</button>
+              </span>
+            </form>
+          </div>
+        {% endblock %}
           {% if g.site_intro_text %}
           {{ h.render_markdown(g.site_intro_text) }}
           {% else %}
@@ -62,17 +73,7 @@
   <div class="hero-secondary">
     <div class="hero-secondary-inner">
       {% block home_secondary_content %}
-        {% block home_search %}
-          <div class="module module-shallow module-narrow module-dark info">
-            <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
-              <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
-              <span class="control-group search-giant">
-                <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
-                <button type="submit" value="{{ _('Search') }}">Submit</button>
-              </span>
-            </form>
-          </div>
-        {% endblock %}
+        
 
         {% block home_tags %}
           <div class="tags">

@@ -11,14 +11,24 @@ right: 0px;
 	margin-top: 0px;
 }
 
-.hero-primary {
-	margin-bottom: 10px;
-}
-
 .hero-primary, .hero-secondary {
 	width: 100%;
+	margin-left: 0px;
+	margin-bottom: 10px;
 }
 
 .hero-secondary {
 	position: relative;
+}
+
+.hero .module-dark .dataset-search {
+	width: 50%;
+}
+
+.module-content.panel {
+	background: url(../base/images/textura-panel.png);
+}
+
+.hero-primary.module.module-popup {
+	background-color: transparent;
 }
