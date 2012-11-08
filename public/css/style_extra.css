@@ -127,3 +127,9 @@ color: #999;
 .stages li.active::before {
 	color: #A4D8DE;
 }
+
+/* DATASETS */
+
+.resource-item .btn {
+	position: relative;
+}
