@@ -1,8 +1,22 @@
+/* GENERAL */
+
 .fci-ampolleta-light {
 position: absolute;
 top: 5px;
 z-index: 10;
 right: 0px;
+}
+
+.masthead, .site-footer {
+	background: url(../base/images/textura-header.jpg);
+}
+
+.hero {
+	background: url(../base/images/textura-fondohome.jpg);
+}
+
+.main {
+	background: url(../base/images/textura-fondo.jpg);
 }
 
 /* HOME */
@@ -14,21 +28,42 @@ right: 0px;
 .hero-primary, .hero-secondary {
 	width: 100%;
 	margin-left: 0px;
-	margin-bottom: 10px;
+	background: url(../base/images/textura-panel.png);
+	border: none;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.3);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero-secondary {
 	position: relative;
+	margin-bottom: 20px;
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+}
+
+.hero-primary {
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
 }
 
 .hero .module-dark .dataset-search {
 	width: 50%;
 }
 
-.module-content.panel {
-	background: url(../base/images/textura-panel.png);
-}
-
 .hero-primary.module.module-popup {
 	background-color: transparent;
+}
+
+.hero .module-dark .dataset-search{
+	width: 50%;
+	float: left;
+	margin-right: 10px;
+}
+
+.featured.media-overlay {
+	float: left;
+	margin: 30px;
 }

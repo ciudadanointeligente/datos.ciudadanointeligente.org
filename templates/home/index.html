@@ -41,7 +41,35 @@
             </form>
           </div>
         {% endblock %}
-          {% if g.site_intro_text %}
+
+        {% block home_tags %}
+          <div class="tags">
+            <h3 class="tag">Populares {{ c.facet_titles.name }}</h3>
+            {% set tags = h.get_facet_items_dict('tags', limit=3) %}
+            {% snippet 'snippets/tag_list.html', tags=tags %}
+          </div>
+        {% endblock %}
+
+        </header>
+      {% endblock %}
+
+    </div>
+  </div>
+  <div class="hero-secondary">
+    <div class="hero-secondary-inner">
+      {% block home_secondary_content %}
+
+      {% block home_image %}
+        <section class="featured media-overlay">
+          {% block home_image_content %}
+            <a class="media-image" href="#">
+              <img src="http://placehold.it/420x220" alt="Placeholder" width="470" height="220" />
+            </a>
+          {% endblock %}
+        </section>
+      {% endblock %}
+
+      {% if g.site_intro_text %}
           {{ h.render_markdown(g.site_intro_text) }}
           {% else %}
             {% block home_primary_content %}
@@ -54,45 +82,17 @@
               {% endblock %}
               </p>
             {% endblock %}
-          {% endif %}
-        </header>
-      {% endblock %}
+      {% endif %} 
 
-      {% block home_image %}
-        <section class="featured media-overlay">
-          <h2 class="media-heading">{% block home_image_caption %}{{ _("This is a featured section") }}{% endblock %}</h2>
-          {% block home_image_content %}
-            <a class="media-image" href="#">
-              <img src="http://placehold.it/420x220" alt="Placeholder" width="420" height="220" />
-            </a>
-          {% endblock %}
-        </section>
-      {% endblock %}
-    </div>
-  </div>
-  <div class="hero-secondary">
-    <div class="hero-secondary-inner">
-      {% block home_secondary_content %}
-        
-
-        {% block home_tags %}
-          <div class="tags">
-            <h3 class="tag">Populares {{ c.facet_titles.name }}</h3>
-            {% set tags = h.get_facet_items_dict('tags', limit=3) %}
-            {% snippet 'snippets/tag_list.html', tags=tags %}
-          </div>
-        {% endblock %}
       {% endblock %}
     </div>
   </div>
 {% endblock %}
 
 {% block secondary_content %}
-  <div class="group-listing">
-    {% for group in c.group_package_stuff %}
-      {% snippet 'snippets/group_item.html', group=group.group_dict, truncate=100 %}
-    {% endfor %}
-  </div>
+
+<p>Aquí van los autores y los ultimos sets</p>
+
 {% endblock %}
 
 {# Remove the toolbar. #}
