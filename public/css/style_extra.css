@@ -108,7 +108,7 @@ color: #999;
 
 .featured.media-overlay {
 	float: left;
-	margin: 30px;
+	margin-bottom: 30px;
 }
 
 .search-giant:before {
@@ -116,6 +116,10 @@ color: #999;
 	position: absolute;
 	top: -30px;
 	left: -10px;
+}
+
+.hero-secondary-inner {
+	padding: 30px;
 }
 
 /* ADD DATASET */
