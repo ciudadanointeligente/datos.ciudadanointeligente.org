@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: CKAN\n"
 "Report-Msgid-Bugs-To: http://trac.ckan.org/\n"
 "POT-Creation-Date: 2012-07-31 12:17+0100\n"
-"PO-Revision-Date: 2012-11-09 19:30-0300\n"
+"PO-Revision-Date: 2012-11-09 19:47-0300\n"
 "Last-Translator: J. Pablo Pérez Trabucco <jpereztrabucco@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/ckan/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -2484,7 +2484,7 @@ msgstr "Actualiza de los roles existentes de los grupos de autorización"
 #: ckanext/publisher_form/templates/publisher_form.html:132
 #: ckanext/publisher_form/templates/publisher_read.html:50
 msgid "Datasets"
-msgstr "Conjuntos de datos"
+msgstr "Sets de datos"
 
 #: ckan/templates/group/edit_form.html:17
 #: ckan/templates/group/new_group_form.html:114
