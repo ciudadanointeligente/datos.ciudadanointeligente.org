@@ -7,28 +7,23 @@
 {% endblock %}
 
 {% block primary_content %}
-  <section class="module">
-    <div class="module-content">
-      <form id="dataset-search" class="dataset-search clearfix" method="get" data-module="select-switch">
-        <span class="control-group search-giant">
-          <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('Search...') }}" />
-          <button type="submit" value="{{ _('Search') }}">Submit</button>
-        </span>
 
-        {{ h.snippet('snippets/sort_by.html', sort=c.sort_by_selected) }}
+    {% block home_search %}
 
-        {% if c.fields -%}
-          <span>
-            {%- for k, v in c.fields -%}
-              <input type="hidden" name="{{ k }}" value="{{ v }}" />
-            {% endfor -%}
-          </span>
-        {%- endif %}
+          <div class="module module-shallow module-narrow module-dark info">
+            <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
+              <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
+              <span class="control-group search-giant">
+                <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
+                <button type="submit" value="{{ _('Search') }}">Submit</button>
+              </span>
+            </form>
+          </div>
 
-        <div id="dataset-search-ext"></div>
-      </form>
-      <div class="results">
-        <strong>
+    {% endblock %}
+
+  <section>
+        <h2>
           {%- if request.params and c.page.item_count -%}
             {{ c.page.item_count }} datasets{{ _(" found for \"{query}\"").format(query=c.q) if c.q }}
           {%- elif request.params and c.page.item_count == 0 -%}
@@ -36,7 +31,12 @@
           {%- else -%}
             {{ _('All datasets') }}
           {%- endif -%}
-        </strong>
+        </h2>
+
+    <div>
+
+      <div class="results">
+
         <div class="filter-list">
           {% for field in c.fields_grouped %}
             <span class="facet">{{ c.facet_titles.get(field) }}:</span>
