@@ -1,8 +1,17 @@
+    {% block home_search %}
+          <div class="module module-shallow module-narrow module-dark info">
+            <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
+              <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
+              <span class="control-group search-giant">
+                <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
+                <button type="submit" value="{{ _('Search') }}">Submit</button>
+              </span>
+            </form>
+          </div>
+    {% endblock %}
+
 <form id="dataset-search" class="dataset-search clearfix" method="GET" data-module="select-switch">
-  <span class="control-group search-giant">
-    <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('Search...') }}" />
-    <button type="submit" value="{{ _('Search') }}">Submit</button>
-  </span>
+
   {% snippet 'snippets/sort_by.html', sort=c.sort_by_selected %}
   {% if c.fields %}
     <span>
