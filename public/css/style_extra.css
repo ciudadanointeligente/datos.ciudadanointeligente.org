@@ -259,7 +259,7 @@ border-bottom-color: #A4D8DE;
 }
 
 .dataset-item:after {
-	content: url(../base/images/sombra-resultado.png);
+	content: url(../base/images/sombra-resultados.png);
 	position: absolute;
 	bottom: -37px;
 	right: 0px;
