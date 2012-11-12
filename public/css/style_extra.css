@@ -225,3 +225,42 @@ border-bottom-color: #A4D8DE;
 .resource-item .btn {
 	position: relative;
 }
+
+.module-dark .dataset-search {
+	background-color: #68A0AD;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.module-dark .dataset-search h3 {
+	color: white;
+	padding-bottom: 10px;
+}
+
+.results {
+	margin-bottom: 15px;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.dataset-item {
+	margin-bottom: 20px;
+	background: white;
+	padding: 20px;
+	position: relative;
+	border-bottom: none;
+}
+
+.dataset-item:last-of-type {
+	border-bottom: none;
+	margin-bottom: 23px;
+	padding-bottom: 20px;
+}
+
+.dataset-item:after {
+	content: url(../base/images/sombra-resultado.png);
+	position: absolute;
+	bottom: -37px;
+	right: 0px;
+}
