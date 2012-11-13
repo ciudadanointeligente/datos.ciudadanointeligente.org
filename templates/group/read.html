@@ -7,6 +7,7 @@
   <li class="active">{% link_for c.group_dict.display_name|truncate(35), controller='group', action='read', id=c.group_dict.name %}</li>
 {% endblock %}
 
+
 {% block actions_content %}
   {% if h.check_access('group_update', {'id': c.group.id}) %}
     <li>{% link_for _('Add Dataset to Group'), controller='package', action='new', group=c.group_dict.id, class_='btn', icon='plus' %}</li>
@@ -16,8 +17,8 @@
 {% endblock %}
 
 {% block primary_content %}
-  <section class="module">
-    <div class="module-content">
+  <section>
+    <div>
       {% include "package/snippets/search_form.html" %}
     </div>
     {{ c.page.pager(q=c.q) }}
