@@ -27,7 +27,8 @@
           {% block home_search %}
           <div class="module module-shallow module-narrow module-dark info">
             <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
-              <h3 class="heading">{{ _("Buscar tus datos") }}   - {{ c.package_count }} </h3>
+              <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
+              <div class="contador-datos"><h1>{{ c.package_count }}</h1>Sets de Datos</div>
               <span class="control-group search-giant">
                 <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
                 <button type="submit" value="{{ _('Search') }}">Submit</button>
