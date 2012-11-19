@@ -116,14 +116,15 @@ color: #999;
 
 .hero h2 {
 	background: #F5F2ED;
-	width: 60%;
+	width: 43%;
 	color: #8BC0CC;
 	padding: 5px 10px;
 	float: left;
+	line-height: 26px;
 }
 
 .hero .tags {
-	width: 35%;
+	width: 51%;
 	float: right;
 }
 
@@ -185,6 +186,20 @@ color: #999;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 	width: 80%;
 	margin: 0 auto;
+}
+
+.hero .module-dark .dataset-search:before {
+	content: url(../base/images/llave-panel.png);
+	position: absolute;
+	left: -62px;
+	top: -7px;
+}
+
+.hero .module-dark .dataset-search:after {
+	content: url(../base/images/serrucho-panel.png);
+	position: absolute;
+	right: -67px;
+	top: -14px;
 }
 
 .featured.media-overlay {
