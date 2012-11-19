@@ -116,16 +116,19 @@ color: #999;
 
 .hero h2 {
 	background: #F5F2ED;
-	width: 43%;
+	width: 70%;
 	color: #8BC0CC;
-	padding: 5px 10px;
-	float: left;
+	padding: 5px 50px;
 	line-height: 26px;
+	text-align: center;
+	margin: 0px auto 14px;
 }
 
 .hero .tags {
-	width: 51%;
-	float: right;
+	width: 82%;
+	margin: 0 auto 30px;
+	background: #F5F2ED;
+	padding: 6px 0;
 }
 
 .hero .module-dark .module-content {
