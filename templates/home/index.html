@@ -24,18 +24,22 @@
     <div class="module-content panel">
       {% block home_primary %}
         <header>
-          {% block home_search %}
-          <div class="module module-shallow module-narrow module-dark info">
-            <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
-              <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
-              <div class="contador-datos"><h1>{{ c.package_count }}</h1>Sets de Datos</div>
-              <span class="control-group search-giant">
-                <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
-                <button type="submit" value="{{ _('Search') }}">Submit</button>
-              </span>
-            </form>
-          </div>
-        {% endblock %}
+
+
+        {% if g.site_intro_text %}
+            {{ h.render_markdown(g.site_intro_text) }}
+            {% else %}
+              {% block home_primary_content %}
+                <h1 class="page-heading">{% block home_primary_heading %}{{ _("Welcome to CKAN") }}{% endblock %}</h1>
+                <p>
+                {% block home_primary_text %}
+                  {% trans %}This is a nice introductory paragraph about CKAN or the site
+                  in general. We don't have any copy to go here yet but soon we will
+                  {% endtrans %}
+                {% endblock %}
+                </p>
+              {% endblock %}
+        {% endif %} 
 
         {% block home_tags %}
           <div class="tags">
@@ -54,30 +58,18 @@
     <div class="hero-secondary-inner">
       {% block home_secondary_content %}
 
-      {% block home_image %}
-        <section class="featured media-overlay">
-          {% block home_image_content %}
-            <a class="media-image" href="#">
-              <img src="http://placehold.it/420x220" alt="Placeholder" width="470" height="220" />
-            </a>
-          {% endblock %}
-        </section>
+      {% block home_search %}
+              <div class="module module-shallow module-narrow module-dark info">
+                <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
+                  <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
+                  <div class="contador-datos"><h1>{{ c.package_count }}</h1>Sets de Datos</div>
+                  <span class="control-group search-giant">
+                    <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
+                    <button type="submit" value="{{ _('Search') }}">Submit</button>
+                  </span>
+                </form>
+              </div>
       {% endblock %}
-
-      {% if g.site_intro_text %}
-          {{ h.render_markdown(g.site_intro_text) }}
-          {% else %}
-            {% block home_primary_content %}
-              <h1 class="page-heading">{% block home_primary_heading %}{{ _("Welcome to CKAN") }}{% endblock %}</h1>
-              <p>
-              {% block home_primary_text %}
-                {% trans %}This is a nice introductory paragraph about CKAN or the site
-                in general. We don't have any copy to go here yet but soon we will
-                {% endtrans %}
-              {% endblock %}
-              </p>
-            {% endblock %}
-      {% endif %} 
 
       {% endblock %}
     </div>
