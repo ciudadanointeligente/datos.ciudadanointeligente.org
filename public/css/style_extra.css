@@ -307,3 +307,8 @@ border-bottom-color: #A4D8DE;
 	bottom: -37px;
 	right: 0px;
 }
+
+.ckan-comment-thread {
+	padding: 0 25px;
+	margin: 20px 0;
+}
