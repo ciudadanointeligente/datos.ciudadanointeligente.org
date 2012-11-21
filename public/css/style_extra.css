@@ -345,7 +345,8 @@ border-bottom-color: #A4D8DE;
 }
 
 .resultados-autor {
-	margin: -22px 0px 20px;
+	float: left;
+	margin-top: -29px;
 }
 
 .resultados-autor span {
@@ -363,6 +364,6 @@ border-bottom-color: #A4D8DE;
 .dataset-heading {
 	font-size: 16px;
 	border-bottom: 1px dotted #C7C7C7;
-	padding: 20px 0;
-	margin: -20px 0px;
+	padding: 0px 0 15px;
+	margin: 0px 0px 10px;
 }
