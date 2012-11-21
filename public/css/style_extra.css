@@ -315,8 +315,11 @@ border-bottom-color: #A4D8DE;
 }
 
 .resultados-autor {
+	margin: -22px 0px 20px;
+}
+
+.resultados-autor span {
 	font-style: italic;
-	margin-bottom: 20px;
 }
 
 .resultados-descripcion, .resultados-tags {
@@ -325,4 +328,11 @@ border-bottom-color: #A4D8DE;
 
 .tag-list {
 	margin: -32px 0px 0px 26px;
+}
+
+.dataset-heading {
+	font-size: 16px;
+	border-bottom: 1px dotted #C7C7C7;
+	padding: 20px 0;
+	margin: -20px 0px;
 }
