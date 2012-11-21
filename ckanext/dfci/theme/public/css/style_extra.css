@@ -114,6 +114,29 @@ color: #999;
 	box-shadow: none;
 }
 
+.hero h2 {
+	background: #F5F2ED;
+	width: 70%;
+	color: #5BA5B6;
+	padding: 7px 50px 4px;
+	line-height: 33px;
+	text-align: center;
+	margin: 0px auto 2px;
+}
+
+.hero .page-heading {
+	font-size: 24px;
+	line-height: 30px;
+	padding-top: 15px;
+}
+
+.hero .tags {
+	width: 82%;
+	margin: 0 auto 30px;
+	background: #F5F2ED;
+	padding: 6px 0;
+}
+
 .hero .module-dark .module-content {
 	background-color: #68A0AD;
 }
@@ -127,7 +150,6 @@ color: #999;
 
 .hero-primary.module.module-popup {
 	background-color: transparent;
-	height: 152px;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
@@ -164,15 +186,29 @@ color: #999;
 	left: -14px;
 }
 
-.hero .module-dark .dataset-search{
-	width: 60%;
-	float: left;
+.hero .module-dark .dataset-search {
 	margin-right: 10px;
 	position: relative;
 	height: 100px;
-	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.3);
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	width: 80%;
+	margin: 0 auto;
+}
+
+.hero .module-dark .dataset-search:before {
+	content: url(../base/images/llave-panel.png);
+	position: absolute;
+	left: -62px;
+	top: -7px;
+}
+
+.hero .module-dark .dataset-search:after {
+	content: url(../base/images/serrucho-panel.png);
+	position: absolute;
+	right: -67px;
+	top: -14px;
 }
 
 .featured.media-overlay {
@@ -188,7 +224,7 @@ color: #999;
 }
 
 .hero-secondary-inner {
-	padding: 30px;
+	padding: 20px;
 }
 
 .contador-datos {
@@ -276,4 +312,33 @@ border-bottom-color: #A4D8DE;
 	position: absolute;
 	bottom: -37px;
 	right: 0px;
+}
+
+.ckan-comment-thread {
+	padding: 0 25px;
+	margin: 20px 0;
+}
+
+.resultados-autor {
+	float: left;
+	margin-top: -29px;
+}
+
+.resultados-autor span {
+	font-style: italic;
+}
+
+.resultados-descripcion, .resultados-tags {
+	margin-top: 10px;
+}
+
+.resultados-tags .tag-list {
+	margin: -32px 0px 0px 26px;
+}
+
+.dataset-heading {
+	font-size: 16px;
+	border-bottom: 1px dotted #C7C7C7;
+	padding: 0px 0 15px;
+	margin: 0px 0px 10px;
 }
