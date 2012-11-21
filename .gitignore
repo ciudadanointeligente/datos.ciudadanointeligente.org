@@ -28,3 +28,7 @@ pip-log.txt
 
 #ckan.log
 ckan.log
+
+
+#sqlite3
+*.db
