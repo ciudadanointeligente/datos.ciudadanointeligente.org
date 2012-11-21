@@ -29,19 +29,17 @@ Example:
       {% endif %}
       {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
     </h3>
+    <div class="resultados-autor">por <span>{{ package.author }}</span></div>
     {% if banner %}
       <span class="banner">Popular</span>
     {% endif %}
     {% if notes %}
-      <div>{{ notes|urlize }}</div>
+      <div class="resultados-descripcion">{{ notes|urlize }}</div>
     {% else %}
       <p class="empty">{{ _("This dataset has no description") }}</p>
     {% endif %}
-    {{ package.author }}
-    {% snippet 'snippets/tag_list.html', tags=package.tags %}
-  </div>
 
-  {% if package.resources and not hide_resources %}
+    {% if package.resources and not hide_resources %}
     <ul class="dataset-resources unstyled">
       {% for resource in h.dict_list_reduce(package.resources, 'format') %}
         <li>
@@ -50,4 +48,9 @@ Example:
       {% endfor %}
     </ul>
   {% endif %}
+
+    <div class="resultados-tags">Tags:{% snippet 'snippets/tag_list.html', tags=package.tags %}</div>
+  </div>
+
+  
 </li>
