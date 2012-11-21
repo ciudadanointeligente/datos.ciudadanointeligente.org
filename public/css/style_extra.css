@@ -313,3 +313,16 @@ border-bottom-color: #A4D8DE;
 	padding: 0 25px;
 	margin: 20px 0;
 }
+
+.resultados-autor {
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+.resultados-descripcion, .resultados-tags {
+	margin-top: 10px;
+}
+
+.tag-list {
+	margin: -32px 0px 0px 26px;
+}
