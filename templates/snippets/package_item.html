@@ -29,7 +29,9 @@ Example:
       {% endif %}
       {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
     </h3>
+    {% if package.author %}
     <div class="resultados-autor">por <span>{{ package.author }}</span></div>
+    {% endif %}
     {% if banner %}
       <span class="banner">Popular</span>
     {% endif %}
