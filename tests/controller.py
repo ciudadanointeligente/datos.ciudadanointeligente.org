@@ -1,13 +1,19 @@
+from paste.deploy import appconfig
+import paste.fixture
+
+from ckan.config.middleware import make_app
 from ckan import plugins
-from ckan.tests import BaseCase
+from ckan.tests import conf_dir, url_for, CreateTestData, BaseCase
 
 class TestMyPlugin(BaseCase):
 
     @classmethod
     def setup_class(cls):
-        # Use the entry point name of your plugin as declared
-        # in your package's setup.py
-        plugins.load('dfci')
+         config = appconfig('config:test.ini', relative_to=conf_dir)
+         config.local_conf['ckan.plugins'] = 'dfci'
+         wsgiapp = make_app(config.global_conf, **config.local_conf)
+         cls.app = paste.fixture.TestApp(wsgiapp)
+         CreateTestData.create()
 
     @classmethod
     def teardown_class(cls):
@@ -15,4 +21,7 @@ class TestMyPlugin(BaseCase):
 
 
     def test_testing(self):
-        assert True, u"Esto tiene que fallar"
+        url = url_for(controller='home', action='index')
+        response = self.app.get(url)
+        assert not isinstance(response.c.recently_changed_packages_activity_list_html, property),\
+               "Es del tipo "+response.c.recently_changed_packages_activity_list_html.__class__.__name__
