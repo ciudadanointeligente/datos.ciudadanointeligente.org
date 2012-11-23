@@ -1,7 +1,11 @@
+<div class="actualizaciones">
 
-Este archivo se llama activity_streams/activity_stream_items.html
-<ul class="activity">
-{% for activity in activities %}
-	{% snippet 'snippets/activity_item.html', activity=activity %}
-{% endfor %}
+	<h2>Últimas actualizaciones</h2>
+
+	<ul class="activity">
+	{% for activity in activities %}
+		{% snippet 'snippets/activity_item.html', activity=activity %}
+	{% endfor %}
 </ul>
+
+</div>
