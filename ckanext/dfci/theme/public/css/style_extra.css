@@ -198,14 +198,14 @@ color: #999;
 }
 
 .hero .module-dark .dataset-search:before {
-	content: url(../base/images/llave-panel.png);
+	content: url(/base/images/llave-panel.png);
 	position: absolute;
 	left: -62px;
 	top: -7px;
 }
 
 .hero .module-dark .dataset-search:after {
-	content: url(../base/images/serrucho-panel.png);
+	content: url(/base/images/serrucho-panel.png);
 	position: absolute;
 	right: -67px;
 	top: -14px;
