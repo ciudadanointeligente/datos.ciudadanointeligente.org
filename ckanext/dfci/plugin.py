@@ -21,6 +21,8 @@ class DFCIPlugin(SingletonPlugin):
 		config['extra_template_paths'] = ','.join([template_dir,config.get('extra_template_paths', '')])
 		config['ckan.site_title'] = u"Datos de la Fundacion Ciudadano Inteligente"
 		config['ckan.site_logo'] = "base/images/logo-data.png"
+        #ckan.favicon = /images/icons/ckan.ico
+		config['ckan.favicon'] = "base/images/icons/favicon-data.ico"
 
 
 
