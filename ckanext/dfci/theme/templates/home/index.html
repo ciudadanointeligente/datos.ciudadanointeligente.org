@@ -1,78 +1,83 @@
-{% extends "page.html" %}
+<html xmlns:py="http://genshi.edgewall.org/"
+  xmlns:i18n="http://genshi.edgewall.org/i18n"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  py:strip=""
+  >
 
-{% block subtitle %}{{ _("Welcome") }}{% endblock %}
+  <py:def function="body_class">${h.literal('no-sidebar')}</py:def>
+ 
+  <py:def function="page_title">Welcome</py:def>
 
-{% block maintag %}{% endblock %}
-
-{% block content %}
-  <div role="main" class="hero">
-    
-    <div id="content" class="container">
-      {{ self.flash() }}
-      {{ self.primary_content() }}
+  <div py:match="//div[@id='content']" class="front-page">
+    <div>
+      <h1 class="page_heading">Welcome to ${g.site_title}!</h1>
     </div>
-  </div>
-  <div class="main">
-    <div class="container">
-      {{ self.secondary_content() }}
-    </div>
-  </div>
-{% endblock %}
+    <div class="row">
+      <div class="span4">
+        <div class="action-box">
+          <div class="action-box-inner find clearfix">
+            <h1>Find data</h1>
 
-{% block primary_content %}
-  <div class="hero-primary module module-popup">
-    <div class="module-content panel">
-      {% block home_primary %}
-        <header>
-
-          <h2 class="page-heading">Nosotros ponemos los datos, las herramientas ciudadanas las creamos todos.</h2>
-
-        </header>
-      {% endblock %}
-
-    </div>
-  </div>
-  <div class="hero-secondary">
-    <div class="hero-secondary-inner">
-      {% block home_secondary_content %}
-
-      {% block home_search %}
-              <div class="module module-shallow module-narrow module-dark info">
-                <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
-                  <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
-                  <div class="contador-datos"><h1>{{ c.package_count }}</h1>Sets de Datos</div>
-                  <span class="control-group search-giant">
-                    <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
-                    <button type="submit" value="{{ _('Search') }}">Submit</button>
-                  </span>
-                </form>
-              </div>
-      {% endblock %}
-
-      {% block home_tags %}
-          <div class="tags">
-            <h3 class="tag">Populares {{ c.facet_titles.name }}</h3>
-            {% set tags = h.get_facet_items_dict('tags', limit=3) %}
-            {% snippet 'snippets/tag_list.html', tags=tags %}
+            <form action="${h.url_for(controller='package', action='search')}" method="GET"> 
+              <input name="q" value="" class="search-field" placeholder="${_('Find datasets')}" /> 
+            </form> 
+            <p>${g.site_title} contains <a href="${h.url_for(controller='package', action='search')}">${c.package_count} datasets</a> that you can 
+            browse, learn about and download.</p>
           </div>
-      {% endblock %}
+        </div>
+      </div>
+      <div class="span4">
+        <div class="action-box">
+          <div class="action-box-inner share clearfix">
+          <h1>Share data</h1>
 
-      {% endblock %}
+          <p>Add your own datasets to share them with others and
+          to find other people interested in your data.</p>
+          
+          <py:choose test="h.check_access('package_create')">
+            <a py:when="" href="${h.url_for(controller='package', action='new')}" class="create-button">Create a dataset &raquo;</a>
+            <py:otherwise>
+              <a href="${h.url_for(controller='user', action='login')}" class="create-button">Sign up &raquo;</a>
+            </py:otherwise>
+          </py:choose>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="action-box">
+          <div class="action-box-inner collaborate clearfix">
+          <h1>Collaborate</h1>
+
+          <p>Find out more about working with open data by exploring 
+          these resources:</p>
+          <ul>
+            <li><a href="http://getthedata.org">GetTheData.org</a></li>
+            <li><a href="http://datapatterns.org">DataPatterns.org</a></li>
+            <li><a href="http://opendatahandbook.org">Open Data Handbook</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div py:if="c.groups" class="row whoelse">
+      <div class="span12">
+        <h2>Who else is here?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <py:for each="i, group_dict in enumerate(c.groups[:6])">
+        <div class="span4">
+          <div class="group">
+            <h3><a href="${h.url_for(controller='group', action='read', id=group_dict['name'])}">${group_dict['title']}</a></h3>
+            <p>
+              ${h.markdown_extract(group_dict['description'])}
+            </p>
+            <strong>${group_dict['title']} has ${group_dict['packages']} datasets.</strong>
+          </div>
+        </div>
+      </py:for>
     </div>
   </div>
-{% endblock %}
+  <xi:include href="layout.html" />
+</html>
 
-{% block secondary_content %}
-{{ c.recently_changed_packages_activity_list_html }}
-
-<a class="btn btn-primary btn-morado" href="https://www.accesointeligente.org/AccesoInteligente/#home" target="_blank">
-  
-    Solicitar nuevos datos públicos
-  
-</a>
-{{ g.site_title }}
-{{ g.algo }}
-{% endblock %}
-
-{# Remove the toolbar. #}
-{% block toolbar %}{% endblock %}
