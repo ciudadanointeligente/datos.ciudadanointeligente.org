@@ -23,6 +23,9 @@ class DFCIPlugin(SingletonPlugin):
 		config['ckan.site_logo'] = "/base/images/logo-data.png"
         #ckan.favicon = /images/icons/ckan.ico
 		config['ckan.favicon'] = "/base/images/icons/favicon-data.ico"
+		config['ckan.locale_default'] = "es"
+		config['ckan.locale_order'] = "es en pt_BR ja fr"
+		config['ckan.locales_filtered_out'] = "ja it ko_KR cs_CZ ca fi el sv sr sr@latin no sk ru de pl nl bg hu sa sl lv sr_Latn lt sq ro"
 
 
 
