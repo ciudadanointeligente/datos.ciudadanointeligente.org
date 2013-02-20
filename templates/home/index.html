@@ -37,33 +37,6 @@
           </div>
         {% endblock %}
 
-        {% block home_tags %}
-          <div class="tags">
-            <h3 class="tag">Populares {{ c.facet_titles.name }}</h3>
-            {% set tags = h.get_facet_items_dict('tags', limit=3) %}
-            {% snippet 'snippets/tag_list.html', tags=tags %}
-          </div>
-        {% endblock %}
-
-        </header>
-      {% endblock %}
-
-    </div>
-  </div>
-  <div class="hero-secondary">
-    <div class="hero-secondary-inner">
-      {% block home_secondary_content %}
-
-      {% block home_image %}
-        <section class="featured media-overlay">
-          {% block home_image_content %}
-            <a class="media-image" href="#">
-              <img src="http://placehold.it/420x220" alt="Placeholder" width="470" height="220" />
-            </a>
-          {% endblock %}
-        </section>
-      {% endblock %}
-
       {% if g.site_intro_text %}
           {{ h.render_markdown(g.site_intro_text) }}
           {% else %}
@@ -79,6 +52,25 @@
             {% endblock %}
       {% endif %} 
 
+
+        </header>
+      {% endblock %}
+
+    </div>
+  </div>
+  <div class="hero-secondary">
+    <div class="hero-secondary-inner">
+      {% block home_secondary_content %}
+
+        {% block home_tags %}
+          <div class="tags">
+            <h3 class="tag">Populares {{ c.facet_titles.name }}</h3>
+            {% set tags = h.get_facet_items_dict('tags', limit=3) %}
+            {% snippet 'snippets/tag_list.html', tags=tags %}
+          </div>
+        {% endblock %}
+
+
       {% endblock %}
     </div>
   </div>
@@ -87,11 +79,7 @@
 {% block secondary_content %}
 
 <p>Aquí van los autores y los ultimos sets</p>
-<a class="btn btn-primary btn-morado" href="https://www.accesointeligente.org/AccesoInteligente/#home" target="_blank">
   
-    Solicitar nuevos datos públicos
-  
-</a>
 {% endblock %}
 
 {# Remove the toolbar. #}

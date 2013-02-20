@@ -8,16 +8,16 @@
 }
 
 .masthead, .site-footer, body {
-	background: url(../base/images/textura-header.jpg);
+	background: url(../base/images/diagonalesheader-12.jpg);
 }
 
 [role="main"].hero {
-	background: url(../base/images/textura-fondohome.jpg);
+	background: url(../base/images/diagonaleshome-12.jpg);
 	padding-bottom: 20px;
 }
 
 [role="main"], .main {
-	background: url(../base/images/textura-fondo.jpg);
+	background: url(../base/images/diagonales-12.jpg);
 }
 
 .btn-primary {
@@ -85,19 +85,11 @@ color: #999;
 }
 
 .hero > .container {
-	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.3);
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-	border: 20px solid #F5F2ED;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 2px;
 }
 
 .hero-primary, .hero-secondary {
 	width: 100%;
 	margin-left: 0px;
-	background: url(../base/images/textura-panel.png);
 	border: none;
 }
 
@@ -115,7 +107,8 @@ color: #999;
 }
 
 .hero .module-dark .module-content {
-	background-color: #68A0AD;
+	background-image: url(../base/images/wood.png);
+	padding: 20px;
 }
 
 .search-giant input {
@@ -136,32 +129,9 @@ color: #999;
 	box-shadow: none;
 }
 
-.hero-primary.module.module-popup:before {
-	content: url(../base/images/tornillo.png);
-	position: absolute;
-	top: -14px;
-	left: -14px;
-}
-
-.hero-primary.module.module-popup:after {
-	content: url(../base/images/tornillo.png);
-	position: absolute;
-	top: -14px;
-	right: -14px;
-}
-
-.hero-secondary:after {
-	content: url(../base/images/tornillo.png);
-	position: absolute;
-	bottom: -22px;
-	right: -14px;
-}
-
-.hero-secondary:before {
-	content: url(../base/images/tornillo.png);
-	position: absolute;
-	bottom: -22px;
-	left: -14px;
+.hero-primary .module-content {
+	padding: 0px;
+	margin: 0px 0;
 }
 
 .hero .module-dark .dataset-search{
@@ -181,14 +151,14 @@ color: #999;
 }
 
 .search-giant:before {
-	content: url(../base/images/engranaje-buscador.png);
+	content: url(../base/images/b-engranaje-buscador.png);
 	position: absolute;
 	top: -30px;
 	left: -10px;
 }
 
 .hero-secondary-inner {
-	padding: 30px;
+	padding: 4px;
 }
 
 .contador-datos {
@@ -196,8 +166,8 @@ color: #999;
 	top: 0px;
 	right: 0px;
 	text-align: center;
-	background: url(../base/images/linea-contador.png) repeat-y;
-	padding: 27px 14px 31px;
+	background: url(../base/images/b-linea-contador.png) repeat-y;
+	padding: 27px 14px 60px;
 }
 
 
@@ -240,7 +210,7 @@ border-bottom-color: #A4D8DE;
 }
 
 .module-dark .dataset-search {
-	background-color: #68A0AD;
+	background-image: url(../base/images/wood.png);
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -276,4 +246,27 @@ border-bottom-color: #A4D8DE;
 	position: absolute;
 	bottom: -37px;
 	right: 0px;
+}
+
+.resultados-autor {
+	margin: -22px 0px 20px;
+}
+
+.resultados-autor span {
+	font-style: italic;
+}
+
+.resultados-descripcion, .resultados-tags {
+	margin-top: 10px;
+}
+
+.tag-list {
+	margin: -32px 0px 0px 26px;
+}
+
+.dataset-heading {
+	font-size: 16px;
+	border-bottom: 1px dotted #C7C7C7;
+	padding: 20px 0;
+	margin: -20px 0px;
 }
