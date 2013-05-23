@@ -6,13 +6,12 @@
 
 {% block content %}
   <div role="main" class="hero">
-    
     <div id="content" class="container">
       {{ self.flash() }}
       {{ self.primary_content() }}
     </div>
   </div>
-  <div class="main">
+  <div class="main homepage">
     <div class="container">
       {{ self.secondary_content() }}
     </div>
@@ -21,60 +20,77 @@
 
 {% block primary_content %}
   <div class="hero-primary module module-popup">
-    <div class="module-content panel">
+<!--     <div class="module-content box">
       {% block home_primary %}
         <header>
-
-          <h2 class="page-heading">Nosotros ponemos los datos, las herramientas ciudadanas las creamos todos.</h2>
-
+          {% if g.site_intro_text %}
+          {{ h.render_markdown(g.site_intro_text) }}
+          {% else %}
+            {% block home_primary_content %}
+              <h1 class="page-heading">{% block home_primary_heading %}{{ _("Welcome to CKAN") }}{% endblock %}</h1>
+              <p>
+              {% block home_primary_text %}
+                {% trans %}This is a nice introductory paragraph about CKAN or the site
+                in general. We don't have any copy to go here yet but soon we will
+                {% endtrans %}
+              {% endblock %}
+              </p>
+            {% endblock %}
+          {% endif %}
         </header>
       {% endblock %}
 
-    </div>
+      {% block home_image %}
+        <section class="featured media-overlay">
+          <h2 class="media-heading">{% block home_image_caption %}{{ _("This is a featured section") }}{% endblock %}</h2>
+          {% block home_image_content %}
+            <a class="media-image" href="#">
+              <img src="http://placehold.it/420x220" alt="Placeholder" width="420" height="220" />
+            </a>
+          {% endblock %}
+        </section>
+      {% endblock %}
+    </div> -->
   </div>
   <div class="hero-secondary">
     <div class="hero-secondary-inner">
+      <h2>Nosotros ponemos los datos. Las herramientas ciudadanas las creamos todos.</h2>
       {% block home_secondary_content %}
-
-      {% block home_search %}
-              <div class="module module-shallow module-narrow module-dark info">
-                <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
-                  <h3 class="heading">{{ _("Buscar tus datos") }}</h3>
-                  <div class="contador-datos"><h1>{{ c.package_count }}</h1>Sets de Datos</div>
-                  <span class="control-group search-giant">
-                    <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('ej. municipalidades, antenas de telefonía') }}" />
-                    <button type="submit" value="{{ _('Search') }}">Submit</button>
-                  </span>
-                </form>
+          <div class="module module-shallow module-narrow module-dark info box">
+            {% block home_search %}
+              <form class="dataset-search module-content clearfix" method="get" action="{% url_for controller='package', action='search' %}">
+                <h3 class="heading">{{ _("Search Your Data") }}</h3>
+                <span class="control-group search-giant">
+                  <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('eg. Gold Prices') }}" />
+                  <button type="submit" value="{{ _('Search') }}">Submit</button>
+                </span>
+              </form>
+            {% endblock %}
+            {% block home_tags %}
+              <div class="tags">
+                <h3>{{ _('Popular Tags') }}</h3>
+                {% set tags = h.get_facet_items_dict('tags', limit=3) %}
+                {% for tag in tags %}
+                  <a class="tag" href="{% url_for controller='package', action='search', tags=tag.name %}">{{ h.truncate(tag.display_name, 22) }}</a>
+                {% endfor %}
               </div>
-      {% endblock %}
-
-      {% block home_tags %}
-          <div class="tags">
-            <h3 class="tag">Populares {{ c.facet_titles.name }}</h3>
-            {% set tags = h.get_facet_items_dict('tags', limit=3) %}
-            {% snippet 'snippets/tag_list.html', tags=tags %}
+            {% endblock %}
           </div>
-      {% endblock %}
-
       {% endblock %}
     </div>
   </div>
 {% endblock %}
 
 {% block secondary_content %}
-
-<div class="primary">
-</div>
-
-<div class="secondary">
-    <a class="btn btn-primary btn-morado" href="https://www.accesointeligente.org/AccesoInteligente/#home" target="_blank">    Solicitar nuevos datos públicos</a>
-</div>
-
-
-{{ c.recently_changed_packages_activity_stream }}
-  
-
+  <div class="row group-listing">
+    {% for group in c.group_package_stuff %}
+      <div class="span6">
+        <div class="box">
+          {% snippet 'snippets/group_item.html', group=group.group_dict, truncate=100 %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}
 
 {# Remove the toolbar. #}
