@@ -62,20 +62,27 @@
   </div>
 {% endblock %}
 
+
+
 {% block secondary_content %}
 
-<div class="primary">
-</div>
+  <div role="main">
 
-<div class="secondary">
-    <a class="btn btn-primary btn-morado" href="https://www.accesointeligente.org/AccesoInteligente/#home" target="_blank">    Solicitar nuevos datos públicos</a>
-</div>
+      <div class="primary primary-home">
+            <div class="dataset-item">
+            {{ c.recently_changed_packages_activity_stream }}
+            </div>
+      </div>
 
+      <div class="secondary">
+          <a class="btn btn-primary btn-morado" href="https://www.accesointeligente.org/AccesoInteligente/#home" target="_blank">    Solicitar nuevos datos públicos</a>
+      </div>
 
-{{ c.recently_changed_packages_activity_stream }}
-  
+  </div>
 
 {% endblock %}
+
+
 
 {# Remove the toolbar. #}
 {% block toolbar %}{% endblock %}

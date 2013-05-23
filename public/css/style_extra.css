@@ -236,6 +236,18 @@ color: #999;
 	padding: 27px 14px 31px;
 }
 
+.main::after .primary-home, .main::before .primary-home, [role="main"]::after .primary-home, [role="main"]::before .primary-home {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 7px;
+	background: white;
+	border-color: #ffffff;
+	border-style: solid;
+	border-width: 0;
+}
+
 /* ULTIMAS ACTUALIZACIONES */
 
 .actualizaciones i {
