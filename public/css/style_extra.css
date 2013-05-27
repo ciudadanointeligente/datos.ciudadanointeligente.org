@@ -8,7 +8,7 @@
 }
 
 .masthead, .site-footer, body {
-	background: url(../base/images/textura-header.jpg);
+	background: url(../img/textura-header.jpg);
 }
 
 [role="main"].hero {
@@ -115,17 +115,24 @@ color: #999;
 .hero h2 {
 	background: #F5F2ED;
 	width: 70%;
-	color: #a4d8de;
+	color: rgb(83, 83, 83);
 	padding: 7px 50px 4px;
 	line-height: 33px;
 	text-align: center;
 	margin: 0px auto 2px;
 	font-size: 28px;
-	text-shadow: 2px 2px 0px rgb(77, 131, 140);
+	font-weight: lighter;
 }
 
 .hero .tags h3 {
-	color: rgb(47, 96, 104);
+	color: rgb(83,83,83);
+}
+
+.hero a.tag:hover {
+	background-color: #a4d8de;
+	color: rgb(83,83,83);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+	border: 1px solid rgb(121, 192, 201);
 }
 
 .hero .page-heading {
@@ -142,7 +149,11 @@ color: #999;
 }
 
 .hero .module-dark .module-content {
-	background-color: #68A0AD;
+	background-color: #32acaf;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid rgb(20, 139, 135);
 }
 
 .search-giant input {
@@ -206,14 +217,14 @@ color: #999;
 }
 
 .hero .module-dark .dataset-search:before {
-	content: url(../base/images/llave-panel.png);
+	content: url(../img/martillo-panel.png);
 	position: absolute;
-	left: -62px;
-	top: -7px;
+	left: -94px;
+	top: -10px;
 }
 
 .hero .module-dark .dataset-search:after {
-	content: url(../base/images/serrucho-panel.png);
+	content: url(../img/serrucho-panel.png);
 	position: absolute;
 	right: -67px;
 	top: -14px;
@@ -225,7 +236,7 @@ color: #999;
 }
 
 .search-giant:before {
-	content: url(../base/images/engranaje-buscador.png);
+	content: url(../img/engranaje-buscador.png);
 	position: absolute;
 	top: -30px;
 	left: -10px;
@@ -262,12 +273,6 @@ color: #999;
 
 .hero-secondary-inner .search-giant input {
 	border-color: rgb(55, 158, 154);
-}
-
-.hero .module-dark .module-content {
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
 }
 
 /* ULTIMAS ACTUALIZACIONES */
@@ -316,15 +321,39 @@ border-bottom-color: #A4D8DE;
 
 /* DATASETS */
 
+.wrapper {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	background: none;
+}
+
 .resource-item .btn {
 	position: relative;
 }
 
-.module-dark .dataset-search {
-	background-color: #68A0AD;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+.secondary .module.module-narrow.module-shallow {
+	background: #ffffff;
+	border-radius: 6px;
+	border: 1px solid #d8d8d8;
+/*	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);*/
+}
+
+.secondary .module.module-narrow.module-shallow .module-heading {
+	border-radius: 6px 6px 0px 0px;
+	border: none;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.module-content .dataset-search {
+	position: relative;
+	background-color: #32acaf;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid rgb(20, 139, 135);
+	padding: 30px 20px 20px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.24);
 }
 
 .module-dark .dataset-search h3 {
@@ -386,4 +415,8 @@ border-bottom-color: #A4D8DE;
 	border-bottom: 1px dotted #C7C7C7;
 	padding: 0px 0 15px;
 	margin: 0px 0px 10px;
+}
+
+.module-content:first-child {
+	padding-top: 0px;
 }
