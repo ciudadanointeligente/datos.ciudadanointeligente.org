@@ -74,7 +74,27 @@ color: #999;
 	background-color: #A4D8DE;
 }
 
+/* HEADER */
 
+.account-masthead {
+	background: #003647;
+}
+
+.masthead .navigation .nav-pills li.active a {
+	background-color: rgba(0, 117, 114, 0.5);
+}
+
+.masthead .navigation .nav-pills li:hover a {
+	background-color: rgba(0, 117, 114, 0.5);
+}
+
+.masthead input[type="text"] {
+	border-color: rgb(27, 131, 118);
+}
+
+.masthead .content {
+	top: 15px;
+}
 
 /* HOME */
 
@@ -115,17 +135,16 @@ color: #999;
 .hero h2 {
 	background: #F5F2ED;
 	width: 70%;
-	color: rgb(83, 83, 83);
+	color: #003647;
 	padding: 7px 50px 4px;
 	line-height: 33px;
 	text-align: center;
 	margin: 0px auto 2px;
-	font-size: 28px;
-	font-weight: lighter;
+	font-size: 27px;
 }
 
 .hero .tags h3 {
-	color: rgb(83,83,83);
+	color: #003647;
 }
 
 .hero a.tag:hover {
@@ -321,6 +340,10 @@ border-bottom-color: #A4D8DE;
 
 /* DATASETS */
 
+.results strong {
+	color: #003647;
+}
+
 .wrapper {
 	background-color: transparent;
 	border: none;
@@ -419,4 +442,89 @@ border-bottom-color: #A4D8DE;
 
 .module-content:first-child {
 	padding-top: 0px;
+}
+
+/* DASHBOARD */
+
+.page-header .nav-tabs>li {
+	background: rgb(200, 228, 231);
+	margin-right: 4px;
+}
+
+.page-header .nav-tabs li.active {
+	background: #ffffff;
+	border: none;
+	border-bottom-color: #ffffff;
+}
+
+.page-header .nav-tabs {
+	left: 0px;
+}
+
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+	border: 1px solid transparent;
+}
+
+.page-header .nav-tabs>li>a {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	line-height: normal;
+}
+
+.page-header {
+	background-color: transparent;
+}
+
+.primary>.module>.module-content {
+	background: #fff;
+	margin: 0px 0px 0px 10px;
+	padding: 10px 20px 30px;
+	position: relative;
+}
+
+.primary>.module>.module-content.datasets-wrapper {
+	background: transparent;
+}
+
+.primary>.module>.module-content.datasets-wrapper:after {
+	content: none;
+}
+
+.primary>.module>.module-content:after {
+	content: url(../base/images/sombra-resultados.png);
+	position: absolute;
+	bottom: -37px;
+	right: 0px;
+}
+
+.primary>.module>.module-content.page-header :after {
+	content: none;
+}
+
+.wrapper.no-nav .module>.module-content {
+	background: #fff;
+	margin: 0px 0px 0px 10px;
+	padding: 10px 20px 30px;
+	position: relative;
+}
+
+.wrapper.no-nav .module>.module-content:after {
+	content: url(../base/images/sombra-resultados.png);
+	position: absolute;
+	bottom: -37px;
+	right: 0px;
+}
+
+.primary>.module>.module-content.page-header {
+	background: transparent;
+	padding: 0px;
+}
+
+.page-header {
+	border-bottom: none;
+}
+
+.module-content.datasets-wrapper small {
+	float: right;
+	margin-top: -60px;
 }

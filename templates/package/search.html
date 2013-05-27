@@ -15,7 +15,7 @@
 
 {% block primary_content %}
   <section class="module">
-    <div class="module-content">
+    <div class="module-content datasets-wrapper">
       <form id="dataset-search" class="dataset-search clearfix" method="get" data-module="select-switch">
         <span class="control-group search-giant">
           <input type="text" class="search" name="q" value="{{ c.q }}" autocomplete="off" placeholder="{{ _('Search...') }}" />
@@ -71,7 +71,7 @@
   </section>
 
   <section class="module">
-    <div class="module-content">
+    <div class="module-content datasets-wrapper">
       <small>
         {% set api_link = h.link_to(_('API'), h.url_for(controller='api', action='get_api', ver=3)) %}
         {% set api_doc_link = h.link_to(_('API Docs'), 'http://docs.ckan.org/{0}/{1}/api.html'.format(request.environ.CKAN_LANG, g.ckan_doc_version)) %}
